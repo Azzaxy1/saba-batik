@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="min-h-screen py-6 md:py-0 px-6 overflow-x-hidden items-center flex md:px-16 hero">
+    <div className="min-h-screen container py-6 md:py-0 px-6 overflow-x-hidden items-center flex md:px-16 hero">
       <div className="flex-col gap-4 flex justify-around items-center hero-content lg:flex-row-reverse">
         <Image
           alt="hero"
@@ -14,7 +14,10 @@ const Hero = () => {
           width={300}
           className="max-w-sm md:w-[500px] rounded-lg shadow-2xl"
         />
-        <div className="w-full max-w-xl md:mr-24" data-aos="fade-right">
+        <div
+          className="w-full md:max-w-xl lg:max-w-4xl md:mr-24"
+          data-aos="fade-right"
+        >
           <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl">
             Jelajahi Keindahan{" "}
             <span className="text-primary">Batik Nusantara</span>
