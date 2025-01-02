@@ -1,9 +1,10 @@
+import Contact from "@/components/Contact";
 import React from "react";
 
 const ContactPage = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <h1>Contact Page</h1>
+    <div className="min-h-screen justify-center items-center flex flex-col">
+      <Contact />
     </div>
   );
 };

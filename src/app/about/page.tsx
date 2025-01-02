@@ -1,10 +1,15 @@
+import Description from "@/components/About/Description";
+import OurTeam from "@/components/About/OurTeam";
+import VisiMisi from "@/components/About/VisiMisi";
 import React from "react";
 
 const AboutPage = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <h1>About Page</h1>
-    </div>
+    <>
+      <Description />
+      <VisiMisi />
+      <OurTeam />
+    </>
   );
 };
 
