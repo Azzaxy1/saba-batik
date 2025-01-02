@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-800 text-gray-100 py-6">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-around items-center">
+        <div className="flex flex-col md:flex-row md:justify-around md:items-center">
           {/* Logo dan Nama Brand */}
           <div className="flex items-center ">
             <Image
@@ -22,10 +22,10 @@ export default function Footer() {
           </div>
 
           {/* Navigasi */}
-          <div className="flex space-x-6 mt-4 md:mt-0">
+          <div className="flex flex-col px-2 md:flex-row md:space-x-6 mt-4 md:mt-0">
             <Link
               href="/"
-              className="flex items-center gap-2 hover:underline hover:underline-offset-8 n"
+              className="flex items-center gap-2 hover:underline hover:underline-offset-8"
             >
               <AiFillHome />
               Beranda
@@ -54,7 +54,7 @@ export default function Footer() {
           </div>
 
           {/* Media Sosial */}
-          <div className="flex space-x-4 mt-4 md:mt-0">
+          <div className="flex space-x-4 px-2 mt-4 md:mt-0">
             <Link
               href="https://facebook.com"
               target="_blank"

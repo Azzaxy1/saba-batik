@@ -6,8 +6,8 @@ import { Button } from "@nextui-org/react";
 
 const Hero = () => {
   return (
-    <div className="min-h-screen overflow-x-hidden items-center flex md:px-16 hero">
-      <div className="flex-col flex justify-around items-center hero-content lg:flex-row-reverse">
+    <div className="min-h-screen py-6 md:py-0 px-6 overflow-x-hidden items-center flex md:px-16 hero">
+      <div className="flex-col gap-4 flex justify-around items-center hero-content lg:flex-row-reverse">
         <Image
           alt="hero"
           data-aos="fade-left"
@@ -26,7 +26,10 @@ const Hero = () => {
             fashion Anda, mulai dari pakaian hingga kain batik eksklusif.
           </p>
           <Link href="/catalog">
-            <Button className="text-white border-none px-4 bg-primary hover:bg-baseAppHover">
+            <Button
+              size="sm"
+              className="text-white border-none px-4 bg-primary hover:bg-baseAppHover"
+            >
               Lihat Koleksi Batik
             </Button>
           </Link>
