@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row md:justify-around md:items-center">
           {/* Logo dan Nama Brand */}
-          <div className="flex items-center ">
+          <div className="flex items-center">
             <Image
               src={Logo}
               alt="Logo Saba Batik"

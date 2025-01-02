@@ -42,7 +42,7 @@ const Header = () => {
         className="z-50 2xl:py-2 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]"
       >
         {/* Logo dan Menu Toggle */}
-        <NavbarContent>
+        <NavbarContent data-aos="fade-down">
           <NavbarMenuToggle
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             className="sm:hidden"
@@ -58,7 +58,11 @@ const Header = () => {
         </NavbarContent>
 
         {/* Menu Utama untuk Desktop */}
-        <NavbarContent className="hidden gap-4 sm:flex" justify="center">
+        <NavbarContent
+          className="hidden gap-4 sm:flex"
+          justify="center"
+          data-aos="fade-down"
+        >
           {menuItems.map((item, index) => (
             <NavbarItem key={index}>
               <Link

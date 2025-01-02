@@ -2,7 +2,6 @@ import React from "react";
 import HeroImg from "@/assets/img/hero.webp";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@nextui-org/react";
 
 const Hero = () => {
   return (
@@ -20,18 +19,15 @@ const Hero = () => {
             Jelajahi Keindahan{" "}
             <span className="text-primary">Batik Nusantara</span>
           </h1>
-          <p className="py-6">
+          <p className="py-6 text-base md:text-lg text-gray-700">
             Temukan beragam motif batik khas Indonesia yang sarat dengan makna
             budaya dan tradisi. Kami menyediakan koleksi terbaik untuk kebutuhan
             fashion Anda, mulai dari pakaian hingga kain batik eksklusif.
           </p>
           <Link href="/catalog">
-            <Button
-              size="sm"
-              className="text-white border-none px-4 bg-primary hover:bg-baseAppHover"
-            >
+            <button className="text-white border-none px-3 py-2 rounded-lg bg-primary hover:bg-baseAppHover">
               Lihat Koleksi Batik
-            </Button>
+            </button>
           </Link>
         </div>
       </div>
