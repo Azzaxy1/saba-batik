@@ -16,7 +16,7 @@ const CallToAction = () => {
       </p>
       <Link href="/products">
         <p
-          className="bg-gray-800 w-fit mx-auto text-white px-6 py-3 rounded-full font-semibold text-lg hover:bg-gray-800 transition duration-300"
+          className="bg-gray-800 w-fit mx-auto text-white px-6 py-3 rounded-lg font-semibold text-lg hover:bg-gray-800 transition duration-300"
           data-aos="fade-up"
           data-aos-delay="300"
         >

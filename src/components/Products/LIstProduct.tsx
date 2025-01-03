@@ -3,11 +3,31 @@ import { products } from "@/utils/products";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import renderStars from "../RenderStar";
+import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 
-const Products = () => {
-  const productSlice = products.slice(0, 3);
+const renderStars = (rating: number) => {
+  const fullStars = Math.floor(rating);
+  const halfStar = rating % 1 >= 0.5;
+  const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
 
+  return (
+    <div className="flex text-yellow-500">
+      {Array(fullStars)
+        .fill(0)
+        .map((_, index) => (
+          <FaStar key={`full-${index}`} />
+        ))}
+      {halfStar && <FaStarHalfAlt />}
+      {Array(emptyStars)
+        .fill(0)
+        .map((_, index) => (
+          <FaRegStar key={`empty-${index}`} />
+        ))}
+    </div>
+  );
+};
+
+const ListProduct = () => {
   return (
     <section className="py-10 container">
       <div className="mx-auto">
@@ -18,7 +38,7 @@ const Products = () => {
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
           data-aos="fade-up"
         >
-          {productSlice.map((product, index) => (
+          {products.map((product, index) => (
             <div
               key={index}
               className="bg-white shadow-lg rounded-lg overflow-hidden"
@@ -50,17 +70,9 @@ const Products = () => {
             </div>
           ))}
         </div>
-        <Link href="/products">
-          <p
-            className="bg-primary w-fit hover:bg-white border-2 hover:border-2 hover:border-primary hover:text-black mx-auto text-white px-4 py-2 rounded-lg font-semibold text-lg transition duration-300 mt-8"
-            data-aos="fade-up"
-          >
-            Lihat Semua Produk
-          </p>
-        </Link>
       </div>
     </section>
   );
 };
 
-export default Products;
+export default ListProduct;
