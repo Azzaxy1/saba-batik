@@ -74,6 +74,9 @@ const ProductItemPage = () => {
         </div>
         <div className="md:w-1/2">
           <h2 className="text-3xl font-bold mb-4">{product.name}</h2>
+          <p className="text-sm mb-2 text-gray-500">
+            Terjual: {product.sold} pcs
+          </p>
           <div className="flex items-center gap-2 mb-4">
             {renderStars(product.rating)}
             <span className="text-gray-500">({product.rating})</span>
@@ -90,9 +93,7 @@ const ProductItemPage = () => {
                   key={size}
                   onClick={() => setSelectedSize(size)}
                   className={`px-4 py-2 border rounded-lg ${
-                    selectedSize === size
-                      ? "bg-blue-500 text-white"
-                      : "bg-white"
+                    selectedSize === size ? "bg-primary text-white" : "bg-white"
                   }`}
                 >
                   {size}
@@ -110,7 +111,7 @@ const ProductItemPage = () => {
                   onClick={() => setSelectedColor(color)}
                   className={`px-4 py-2 border rounded-lg ${
                     selectedColor === color
-                      ? "bg-blue-500 text-white"
+                      ? "bg-primary text-white"
                       : "bg-white"
                   }`}
                 >
@@ -129,7 +130,7 @@ const ProductItemPage = () => {
                   onClick={() => setSelectedMaterial(material)}
                   className={`px-4 py-2 border rounded-lg ${
                     selectedMaterial.name === material.name
-                      ? "bg-blue-500 text-white"
+                      ? "bg-primary text-white"
                       : "bg-white"
                   }`}
                 >

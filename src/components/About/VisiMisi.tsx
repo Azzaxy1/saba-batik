@@ -2,13 +2,16 @@ import React from "react";
 
 const VisiMisi = () => {
   return (
-    <section className=" bg-gray-800 py-12">
+    <section className="bg-gray-800 py-12">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-white text-center mb-6">
+        <h2
+          className="text-3xl font-bold text-white text-center mb-6"
+          data-aos="fade-down"
+        >
           Visi dan Misi
         </h2>
-        <div className="flex flex-col justify-center  md:flex-row gap-8">
-          <div className="w-full md:max-w-[500px]">
+        <div className="flex flex-col justify-center md:flex-row gap-8">
+          <div className="w-full md:max-w-[500px]" data-aos="fade-right">
             <h3 className="text-xl text-white font-semibold">Visi</h3>
             <p className="mt-4 text-white">
               Menjadi perusahaan terdepan dalam mempromosikan budaya batik
@@ -16,7 +19,7 @@ const VisiMisi = () => {
               yang tinggi.
             </p>
           </div>
-          <div className="w-full md:max-w-[500px]">
+          <div className="w-full md:max-w-[500px]" data-aos="fade-left">
             <h3 className="text-xl text-white font-semibold">Misi</h3>
             <ul className="mt-4 space-y-3 text-white">
               <li>
