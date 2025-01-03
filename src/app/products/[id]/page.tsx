@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import React, { useState } from "react";
 import Pants from "@/assets/img/celana.png";
-import Skirt from "@/assets/img/rok.webp";
+import Skirt from "@/assets/img/rok.png";
 import OrderForm from "@/components/Products/OrderForm";
 
 const ProductItemPage = () => {
@@ -66,9 +66,9 @@ const ProductItemPage = () => {
             <Image
               src={Skirt}
               alt="Rok"
-              width={600}
-              height={600}
-              className="absolute top-[400px] right-[200px]"
+              width={700}
+              height={700}
+              className="absolute top-[550px] left-[-90px]"
             />
           )}
         </div>

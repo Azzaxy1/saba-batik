@@ -9,6 +9,7 @@ import {
   useDisclosure,
   Input,
 } from "@nextui-org/react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 interface OrderFormProps {
@@ -29,6 +30,9 @@ export default function OrderForm({
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [quantity, setQuantity] = useState(1); // State untuk jumlah pesanan
   const [totalPrice, setTotalPrice] = useState(totalPrices); // State untuk harga total
+  const [name, setName] = useState("");
+  const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
 
   // Fungsi untuk mengupdate jumlah dan menghitung total harga
   const handleQuantityChange = (value: number) => {
@@ -56,6 +60,31 @@ export default function OrderForm({
     },
   ];
 
+  const generateWhatsAppLink = () => {
+    const orderId = "ORD" + Math.floor(Math.random() * 1000000);
+    const productName = encodeURIComponent(product.name);
+    const productPrice = `Rp${totalPrice.toLocaleString("id-ID")}`;
+    const message = `
+            Halo, saya ingin memesan produk:
+
+            Nomor Pemesanan: ${orderId}
+            Nama: ${name}
+            Alamat: ${address}
+            No. HP: ${phone}
+            Nama Produk: ${productName}
+            Harga: ${productPrice}
+            Bahan: ${material}
+            Warna: ${color}
+            Ukuran: ${size}
+            Jumlah: ${quantity}
+            Apakah produk ini tersedia?
+        `;
+    const whatsappUrl = `https://api.whatsapp.com/send/?phone=6281314574274&text=${encodeURIComponent(
+      message
+    )}&type=phone_number&app_absent=0`;
+    return whatsappUrl;
+  };
+
   return (
     <>
       <Button color="primary" onPress={onOpen}>
@@ -73,6 +102,20 @@ export default function OrderForm({
                   <Input
                     key={index}
                     label={item.label}
+                    value={
+                      item.label === "Nama"
+                        ? name
+                        : item.label === "Alamat"
+                        ? address
+                        : phone
+                    }
+                    onChange={(e) =>
+                      item.label === "Nama"
+                        ? setName(e.target.value)
+                        : item.label === "Alamat"
+                        ? setAddress(e.target.value)
+                        : setPhone(e.target.value)
+                    }
                     placeholder={item.placeholder}
                     variant="bordered"
                     size="sm"
@@ -124,9 +167,9 @@ export default function OrderForm({
                 <Button color="danger" variant="flat" onPress={onClose}>
                   Batal
                 </Button>
-                <Button color="primary" onPress={onClose}>
-                  Pesan
-                </Button>
+                <Link href={generateWhatsAppLink()} target="_blank">
+                  <Button color="primary">Pesan Sekarang</Button>
+                </Link>
               </ModalFooter>
             </>
           )}
