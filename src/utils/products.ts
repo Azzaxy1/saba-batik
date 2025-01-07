@@ -1,7 +1,7 @@
 import Batik1 from "@/assets/img/batik/batik1.jpg";
 import Batik2 from "@/assets/img/batik/batik2.jpg";
 import Batik3 from "@/assets/img/batik/batik3.jpg";
-import Batik4 from "@/assets/img/batik/batik4.webp";
+import Batik4 from "@/assets/img/batik/batik4.png";
 
 export const products = [
   {
@@ -11,7 +11,7 @@ export const products = [
     price: 500000,
     rating: 4.5,
     gender: "Pria",
-    sold: 120, // Jumlah terjual
+    sold: 120,
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ export const products = [
     price: 350000,
     rating: 4,
     gender: "Wanita",
-    sold: 85, // Jumlah terjual
+    sold: 85,
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ export const products = [
     price: 450000,
     rating: 5,
     gender: "Unisex",
-    sold: 200, // Jumlah terjual
+    sold: 200,
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ export const products = [
     price: 600000,
     rating: 4.8,
     gender: "Pria",
-    sold: 95, // Jumlah terjual
+    sold: 95,
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ export const products = [
     price: 400000,
     rating: 4.3,
     gender: "Wanita",
-    sold: 75, // Jumlah terjual
+    sold: 75,
   },
   {
     id: 6,
@@ -56,7 +56,7 @@ export const products = [
     price: 550000,
     rating: 4.7,
     gender: "Unisex",
-    sold: 150, // Jumlah terjual
+    sold: 150,
   },
   {
     id: 7,
@@ -65,7 +65,7 @@ export const products = [
     price: 650000,
     rating: 5,
     gender: "Pria",
-    sold: 110, // Jumlah terjual
+    sold: 110,
   },
   {
     id: 8,
@@ -74,7 +74,7 @@ export const products = [
     price: 300000,
     rating: 3.8,
     gender: "Wanita",
-    sold: 60, // Jumlah terjual
+    sold: 60,
   },
   {
     id: 9,
@@ -83,7 +83,7 @@ export const products = [
     price: 450000,
     rating: 4.6,
     gender: "Unisex",
-    sold: 180, // Jumlah terjual
+    sold: 180,
   },
   {
     id: 10,
@@ -92,7 +92,7 @@ export const products = [
     price: 500000,
     rating: 4.5,
     gender: "Pria",
-    sold: 130, // Jumlah terjual
+    sold: 130,
   },
   {
     id: 11,
@@ -101,7 +101,7 @@ export const products = [
     price: 550000,
     rating: 4.9,
     gender: "Wanita",
-    sold: 140, // Jumlah terjual
+    sold: 140,
   },
   {
     id: 12,
@@ -110,7 +110,7 @@ export const products = [
     price: 400000,
     rating: 4.4,
     gender: "Unisex",
-    sold: 100, // Jumlah terjual
+    sold: 100,
   },
   {
     id: 13,
@@ -119,7 +119,7 @@ export const products = [
     price: 650000,
     rating: 4.7,
     gender: "Pria",
-    sold: 90, // Jumlah terjual
+    sold: 90,
   },
   {
     id: 14,
@@ -128,7 +128,7 @@ export const products = [
     price: 350000,
     rating: 4.2,
     gender: "Wanita",
-    sold: 50, // Jumlah terjual
+    sold: 50,
   },
   {
     id: 15,
@@ -137,6 +137,15 @@ export const products = [
     price: 500000,
     rating: 4.8,
     gender: "Unisex",
-    sold: 120, // Jumlah terjual
+    sold: 120,
+  },
+  {
+    id: 16,
+    name: "Batik Betawi",
+    image: Batik3,
+    price: 600000,
+    rating: 4.8,
+    gender: "Unisex",
+    sold: 120,
   },
 ];

@@ -9,31 +9,27 @@ import Pants from "@/assets/img/celana.png";
 import Skirt from "@/assets/img/rok.png";
 import OrderForm from "@/components/Products/OrderForm";
 
+const SIZES = ["S", "M", "L", "XL"];
+const COLORS = ["Merah", "Biru", "Hijau", "Kuning", "Salem"];
+const MATERIALS = [
+  { name: "Katun", price: 0 },
+  { name: "Mori", price: 120000 },
+  { name: "Sutra", price: 150000 },
+  { name: "Shantung", price: 170000 },
+  { name: "Paris", price: 200000 },
+  { name: "Ceruti", price: 220000 },
+  { name: "Rayon", price: 250000 },
+];
+
 const ProductItemPage = () => {
+  const [selectedSize, setSelectedSize] = useState(SIZES[0]);
+  const [selectedColor, setSelectedColor] = useState(COLORS[0]);
+  const [selectedMaterial, setSelectedMaterial] = useState(MATERIALS[0]);
   const { id } = useParams();
   const product = products.find((product) => product.id === Number(id));
-  console.log(product);
-
-  const sizes = ["S", "M", "L", "XL"];
-  const colors = ["Merah", "Biru", "Hijau", "Kuning", "Salem"];
-  const materials = [
-    { name: "Katun", price: 0 },
-    { name: "Mori", price: 120000 },
-    { name: "Sutra", price: 150000 },
-    { name: "Shantung", price: 170000 },
-    { name: "Paris", price: 200000 },
-    { name: "Ceruti", price: 220000 },
-    { name: "Rayon", price: 250000 },
-  ];
-
-  const [selectedSize, setSelectedSize] = useState(sizes[0]);
-  const [selectedColor, setSelectedColor] = useState(colors[0]);
-  const [selectedMaterial, setSelectedMaterial] = useState(materials[0]);
 
   const totalPrice =
     Number(product?.price || 0) + Number(selectedMaterial?.price || 0);
-
-  console.log(totalPrice);
 
   if (!product) {
     return (
@@ -88,7 +84,7 @@ const ProductItemPage = () => {
           <div className="mb-4">
             <h3 className="font-semibold text-lg mb-2">Pilih Ukuran:</h3>
             <div className="flex gap-2">
-              {sizes.map((size) => (
+              {SIZES.map((size) => (
                 <button
                   key={size}
                   onClick={() => setSelectedSize(size)}
@@ -105,7 +101,7 @@ const ProductItemPage = () => {
           <div className="mb-4">
             <h3 className="font-semibold text-lg mb-2">Pilih Warna:</h3>
             <div className="flex gap-2">
-              {colors.map((color) => (
+              {COLORS.map((color) => (
                 <button
                   key={color}
                   onClick={() => setSelectedColor(color)}
@@ -124,7 +120,7 @@ const ProductItemPage = () => {
           <div className="mb-4">
             <h3 className="font-semibold text-lg mb-2">Pilih Bahan:</h3>
             <div className="flex gap-2">
-              {materials.map((material) => (
+              {MATERIALS.map((material) => (
                 <button
                   key={material.name}
                   onClick={() => setSelectedMaterial(material)}
