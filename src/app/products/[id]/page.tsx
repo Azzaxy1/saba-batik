@@ -8,13 +8,20 @@ import React, { useState } from "react";
 import Pants1 from "@/assets/img/celana.png";
 import Pants2 from "@/assets/img/celana-abu.png";
 import Pants3 from "@/assets/img/celana-cream.png";
-import Skirt from "@/assets/img/rok.png";
+import Skirt1 from "@/assets/img/rok.png";
+import Skirt2 from "@/assets/img/rok-abu.png";
+import Skirt3 from "@/assets/img/rok-cream.png";
 import OrderForm from "@/components/Products/OrderForm";
 
 const PANTS = [
   { src: Pants1, color: "Hitam" },
   { src: Pants2, color: "Abu" },
   { src: Pants3, color: "Cream" },
+];
+const SKIRT = [
+  { src: Skirt1, color: "Hitam" },
+  { src: Skirt2, color: "Abu" },
+  { src: Skirt3, color: "Cream" },
 ];
 const SIZES = ["S", "M", "L", "XL"];
 const MATERIALS = [
@@ -31,9 +38,11 @@ const ProductItemPage = () => {
   const [selectedSize, setSelectedSize] = useState(SIZES[0]);
   const [selectedMaterial, setSelectedMaterial] = useState(MATERIALS[0]);
   const [selectedPants, setSelectedPants] = useState(PANTS[0]);
+  const [selectedSkirt, setSelectedSkirt] = useState(SKIRT[0]);
   const { id } = useParams();
 
   const product = products.find((product) => product.id === Number(id));
+  console.log(product);
 
   const [selectedColor, setSelectedColor] = useState(
     product?.image[0]?.color || ""
@@ -76,7 +85,7 @@ const ProductItemPage = () => {
             />
           ) : (
             <Image
-              src={Skirt}
+              src={selectedSkirt.src}
               alt="Rok"
               width={700}
               height={700}
@@ -136,19 +145,33 @@ const ProductItemPage = () => {
           <div className="mb-4">
             <h3 className="font-semibold text-lg mb-2">Pilih Warna Bawahan:</h3>
             <div className="flex gap-2">
-              {PANTS.map((img) => (
-                <button
-                  key={img.color}
-                  onClick={() => setSelectedPants(img)}
-                  className={`px-4 py-2 border rounded-lg ${
-                    selectedPants.color === img.color
-                      ? "bg-primary text-white"
-                      : "bg-white"
-                  }`}
-                >
-                  {img.color}
-                </button>
-              ))}
+              {product.gender === "Pria"
+                ? PANTS.map((img) => (
+                    <button
+                      key={img.color}
+                      onClick={() => setSelectedPants(img)}
+                      className={`px-4 py-2 border rounded-lg ${
+                        selectedPants.color === img.color
+                          ? "bg-primary text-white"
+                          : "bg-white"
+                      }`}
+                    >
+                      {img.color}
+                    </button>
+                  ))
+                : SKIRT.map((img) => (
+                    <button
+                      key={img.color}
+                      onClick={() => setSelectedSkirt(img)}
+                      className={`px-4 py-2 border rounded-lg ${
+                        selectedSkirt.color === img.color
+                          ? "bg-primary text-white"
+                          : "bg-white"
+                      }`}
+                    >
+                      {img.color}
+                    </button>
+                  ))}
             </div>
           </div>
 
