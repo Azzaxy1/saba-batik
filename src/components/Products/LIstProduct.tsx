@@ -49,7 +49,7 @@ const ListProduct = () => {
                 data-aos-delay={index * 100}
               >
                 <Image
-                  src={product.image}
+                  src={product.image[0].src}
                   alt={product.name}
                   width={300}
                   height={300}

@@ -5,28 +5,43 @@ import { products } from "@/utils/products";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import React, { useState } from "react";
-import Pants from "@/assets/img/celana.png";
+import Pants1 from "@/assets/img/celana.png";
+import Pants2 from "@/assets/img/celana-abu.png";
+import Pants3 from "@/assets/img/celana-cream.png";
 import Skirt from "@/assets/img/rok.png";
 import OrderForm from "@/components/Products/OrderForm";
 
+const PANTS = [
+  { src: Pants1, color: "Hitam" },
+  { src: Pants2, color: "Abu" },
+  { src: Pants3, color: "Cream" },
+];
 const SIZES = ["S", "M", "L", "XL"];
-const COLORS = ["Merah", "Biru", "Hijau", "Kuning", "Salem"];
 const MATERIALS = [
   { name: "Katun", price: 0 },
-  { name: "Mori", price: 120000 },
-  { name: "Sutra", price: 150000 },
-  { name: "Shantung", price: 170000 },
+  { name: "Mori", price: 50000 },
+  { name: "Sutra", price: 100000 },
+  { name: "Shantung", price: 150000 },
   { name: "Paris", price: 200000 },
-  { name: "Ceruti", price: 220000 },
-  { name: "Rayon", price: 250000 },
+  { name: "Ceruti", price: 250000 },
+  { name: "Rayon", price: 300000 },
 ];
 
 const ProductItemPage = () => {
   const [selectedSize, setSelectedSize] = useState(SIZES[0]);
-  const [selectedColor, setSelectedColor] = useState(COLORS[0]);
   const [selectedMaterial, setSelectedMaterial] = useState(MATERIALS[0]);
+  const [selectedPants, setSelectedPants] = useState(PANTS[0]);
   const { id } = useParams();
+
   const product = products.find((product) => product.id === Number(id));
+
+  const [selectedColor, setSelectedColor] = useState(
+    product?.image[0]?.color || ""
+  );
+
+  const selectedImage = product?.image.find(
+    (img) => img.color === selectedColor
+  );
 
   const totalPrice =
     Number(product?.price || 0) + Number(selectedMaterial?.price || 0);
@@ -38,13 +53,14 @@ const ProductItemPage = () => {
       </div>
     );
   }
+  console.log(selectedPants);
 
   return (
     <div className="min-h-screen py-10 container mx-auto">
       <div className="flex flex-col md:flex-row">
         <div className="md:w-1/2">
           <Image
-            src={product.image}
+            src={selectedImage?.src || product.image[0]?.src}
             alt={product.name}
             width={500}
             height={500}
@@ -52,7 +68,7 @@ const ProductItemPage = () => {
           />
           {product.gender === "Pria" ? (
             <Image
-              src={Pants}
+              src={selectedPants.src}
               alt="Celana"
               width={600}
               height={600}
@@ -99,19 +115,38 @@ const ProductItemPage = () => {
           </div>
 
           <div className="mb-4">
-            <h3 className="font-semibold text-lg mb-2">Pilih Warna:</h3>
+            <h3 className="font-semibold text-lg mb-2">Pilih Warna Batik:</h3>
             <div className="flex gap-2">
-              {COLORS.map((color) => (
+              {product.image.map((img) => (
                 <button
-                  key={color}
-                  onClick={() => setSelectedColor(color)}
+                  key={img.color}
+                  onClick={() => setSelectedColor(img.color)}
                   className={`px-4 py-2 border rounded-lg ${
-                    selectedColor === color
+                    selectedColor === img.color
                       ? "bg-primary text-white"
                       : "bg-white"
                   }`}
                 >
-                  {color}
+                  {img.color}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="mb-4">
+            <h3 className="font-semibold text-lg mb-2">Pilih Warna Bawahan:</h3>
+            <div className="flex gap-2">
+              {PANTS.map((img) => (
+                <button
+                  key={img.color}
+                  onClick={() => setSelectedPants(img)}
+                  className={`px-4 py-2 border rounded-lg ${
+                    selectedPants.color === img.color
+                      ? "bg-primary text-white"
+                      : "bg-white"
+                  }`}
+                >
+                  {img.color}
                 </button>
               ))}
             </div>
