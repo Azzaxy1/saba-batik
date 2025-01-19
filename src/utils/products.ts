@@ -1,3 +1,4 @@
+import { batikWomen } from "@/assets/images";
 import Batik1 from "@/assets/img/batik/batik1.jpg";
 import Batik2 from "@/assets/img/batik/batik2.jpg";
 import Batik3 from "@/assets/img/batik/batik3.jpg";
@@ -58,16 +59,16 @@ export const products = [
     id: 4,
     name: "Batik Mega Mendung",
     image: [
-      { src: Batik2, color: "Merah" },
-      { src: Batik2, color: "Biru" },
-      { src: Batik3, color: "Hijau" },
-      { src: Batik4, color: "Kuning" },
-      { src: Batik1, color: "Jingga" },
-      { src: Batik2, color: "Salem" },
+      { src: batikWomen.Batik4Merah, color: "Merah" },
+      { src: batikWomen.Batik4Biru, color: "Biru" },
+      { src: batikWomen.Batik4Hijau, color: "Hijau" },
+      { src: batikWomen.Batik4Kuning, color: "Kuning" },
+      { src: batikWomen.Batik4Biru, color: "Jingga" },
+      { src: batikWomen.Batik4Salem, color: "Salem" },
     ],
     price: 200000,
     rating: 4.8,
-    gender: "Pria",
+    gender: "Wanita",
     sold: 95,
   },
   {

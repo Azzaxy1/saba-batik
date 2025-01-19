@@ -42,7 +42,6 @@ const ProductItemPage = () => {
   const { id } = useParams();
 
   const product = products.find((product) => product.id === Number(id));
-  console.log(product);
 
   const [selectedColor, setSelectedColor] = useState(
     product?.image[0]?.color || ""
@@ -89,7 +88,7 @@ const ProductItemPage = () => {
               alt="Rok"
               width={700}
               height={700}
-              className="absolute top-[550px] left-[-90px]"
+              className="absolute top-[550px] left-[-70px]"
             />
           )}
         </div>
