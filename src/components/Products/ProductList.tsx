@@ -26,7 +26,7 @@ const renderStars = (rating: number) => {
   );
 };
 
-const ListProduct = () => {
+const ProductList = () => {
   return (
     <section className="py-10 container">
       <div className="mx-auto container px-4">
@@ -77,4 +77,4 @@ const ListProduct = () => {
   );
 };
 
-export default ListProduct;
+export default ProductList;
