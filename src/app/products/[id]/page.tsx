@@ -80,7 +80,7 @@ const ProductItemPage = () => {
               alt="Celana"
               width={600}
               height={600}
-              className="absolute top-[500px] left-[-30px]"
+              className="absolute top-[500px] left-[150px]"
             />
           ) : (
             <Image
@@ -88,7 +88,7 @@ const ProductItemPage = () => {
               alt="Rok"
               width={700}
               height={700}
-              className="absolute top-[550px] left-[-70px]"
+              className="absolute top-[570px] left-[100px]"
             />
           )}
         </div>
